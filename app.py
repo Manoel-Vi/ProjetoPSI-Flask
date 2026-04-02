@@ -5,10 +5,9 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # definindo as rotas:
-
 # rota para a página inicial
 
-@app.route('/')
+@app.route('/') # caminho padrão para a página inicial
 def index(): # função index para carregar a página inicial
     return render_template('index.html') # arquivo html da página inicial
 
@@ -21,13 +20,14 @@ def cadastro(): # função para irmos para a página de cadastro
 # rota para irmos para a página onde vai mostrar os dados que foram colocados no formulario
 
 @app.route('/cadastro', methods=['POST']) # usando o mesmo caminho, porem com o método POST
-def cadastrar(): # função para mostrar os dados em uma nova página
+def informacoes(): # função para mostrar os dados em uma nova página
 
-    nome = request.form['nome'] # variavel para salvar a informção de nome, usando o request para pegar os dados do formulario
+# dicionário para guardar as informações do formulário, tendo 2 chaves
+    dados = {
+        'nome': request.form.get('nome'), # variavel para salvar a informção de nome, usando o request para pegar os dados do formulario
 
-    email = request.form['email']# variavel para salvar a informção do email, usando o request para pegar os dados do formulario
-
-    senha = request.form['senha']# variavel para salvar a informção da senha, usando o request para pegar os dados do formulario
+        'email': request.form.get('email')# variavel para salvar a informção do email, usando o request para pegar os dados do formulario
+    }
     
     # rederincionando para uma nova página onde vai ter as informações salvas acima
-    return f'Usuário {nome} cadastrado com sucesso!'
+    return render_template('informações_login.html', dados = dados) # arquivo html da página onde vai mostrar os dados, mais a variavel dados, onde guarda as informações do formulario
