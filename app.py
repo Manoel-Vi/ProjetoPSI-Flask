@@ -29,5 +29,5 @@ def informacoes(): # função para mostrar os dados em uma nova página
         'email': request.form.get('email')# variavel para salvar a informção do email, usando o request para pegar os dados do formulario
     }
     
-    # rederincionando para uma nova página onde vai ter as informações salvas acima
+    # rederincionando para uma nova página onde vai ter as informações salvos acima
     return render_template('informações_login.html', dados = dados) # arquivo html da página onde vai mostrar os dados, mais a variavel dados, onde guarda as informações do formulario
