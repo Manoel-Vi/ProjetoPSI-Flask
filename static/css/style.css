@@ -28,6 +28,7 @@ a:hover{
     transition: 300ms;
     transform: scale(1.05);
 }
+/* estilo da div da página inicial */
 #divInicial{
     margin: 5%;
     width: 60%;
@@ -44,6 +45,7 @@ div p{
     font-size: 20px;
     margin-bottom: 20px;
 }
+/* estilo do formulário */
 form{
     margin: 5%;
     width: 60%;
@@ -58,6 +60,7 @@ label{
     font-size: 20px;
     margin-bottom: 5px;
 }
+/* campos de texto e email */
 input[type="text"],input[type="email"]{
     padding: 10px;
     font-size: 16px;
@@ -65,6 +68,7 @@ input[type="text"],input[type="email"]{
     border-radius: 5px;
     transition: all 0.4s ease;
 }
+/* hovers do texto e email */
 input[type="text"]:hover,input[type="email"]:hover{
     background-color: white;
     transform: scale(1.02);
@@ -87,6 +91,7 @@ input[type="submit"]:hover{
     transform: scale(1.02);
     transition: 300ms;
 }
+/* estilo da div da página de informações de login */
 #divInformacoes{
     margin: 5%;
     width: 60%;
@@ -97,6 +102,7 @@ input[type="submit"]:hover{
     display: flex;
     flex-direction: column;
 }
+/* estilo da div, para que o botão de voltar fique centralizado */
 #divInformacoes div{
     margin: 3% 0;
     width: 100%;
