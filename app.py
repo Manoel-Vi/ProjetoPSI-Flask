@@ -22,12 +22,9 @@ def cadastro(): # função para irmos para a página de cadastro
 @app.route('/cadastro', methods=['POST']) # usando o mesmo caminho, porem com o método POST
 def informacoes(): # função para mostrar os dados em uma nova página
 
-# dicionário para guardar as informações do formulário, tendo 2 chaves
-    dados = {
-        'nome': request.form.get('nome'), # variavel para salvar a informção de nome, usando o request para pegar os dados do formulario
+    nome = request.form.get('nome') # variavel para salvar a informção de nome, usando o request para pegar os dados do formulario
 
-        'email': request.form.get('email')# variavel para salvar a informção do email, usando o request para pegar os dados do formulario
-    }
-    
+    email = request.form.get('email') # variavel para salvar a informção do email
+
     # rederincionando para uma nova página onde vai ter as informações salvos acima
-    return render_template('informações_login.html', dados = dados) # arquivo html da página onde vai mostrar os dados, mais a variavel dados, onde guarda as informações do formulario
+    return render_template('informacoes_login.html', nome=nome, email=email)
